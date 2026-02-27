@@ -162,6 +162,42 @@ export const projectsData = [
         code: "",
         demo: "",
         // image: nsrl_stats,
+    },
+    {
+        id: 9,
+        name: "HR Management System",
+        description: "Developed a Desktop and Web Application in C# to manage employee information, facilitating interaction between employees and administration.",
+        tools: ["C#", ".NET", "SQL Server", "Desktop App"],
+        role: "Software Engineer",
+        code: "",
+        demo: "",
+    },
+    {
+        id: 10,
+        name: "Smart Manage",
+        description: "Created an apartment management system website to streamline operations for apartment owners. Ensuring easy management of daily tasks.",
+        tools: ["Web Development", "HTML", "CSS", "PHP"],
+        role: "Web Developer",
+        code: "",
+        demo: "",
+    },
+    {
+        id: 11,
+        name: "Customer Care Management",
+        description: "Built a .NET application featuring service based on customer input, direct online communication, and feedback management.",
+        tools: [".NET", "C#", "SQL Server"],
+        role: ".NET Developer",
+        code: "",
+        demo: "",
+    },
+    {
+        id: 12,
+        name: "Whiteoval.in Website",
+        description: "Whiteoval.in is a static website, which is created for Whiteoval technologies Pvt Ltd. The main aim of the website is to boost sales.",
+        tools: ["HTML", "CSS", "JavaScript", "Static Site"],
+        role: "Web Developer",
+        code: "",
+        demo: "http://whiteoval.in",
     }
 ];
 
