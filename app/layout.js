@@ -9,9 +9,76 @@ import "./css/globals.scss";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-    title: "Portfolio of Aswin Blix",
+    metadataBase: new URL("https://aswin-blix.github.io"),
+    title: {
+        default: "Aswin Blix T.C — AI-Native Full Stack Engineer",
+        template: "%s | Aswin Blix",
+    },
     description:
-        "This is the portfolio of Aswin Blix. I am a full stack developer and a self taught developer. I love to learn new things and I am always open to collaborating with others. I am a quick learner and I am always looking for new challenges.",
+        "Portfolio of Aswin Blix T.C — AI-Native Full Stack Engineer with 4+ years of experience building clean, modern web solutions using React, Next.js, Laravel, Vue.js, Python, Shopify, Odoo, and AWS.",
+    keywords: [
+        "Aswin Blix",
+        "Full Stack Developer",
+        "AI-Native Engineer",
+        "React Developer",
+        "Next.js Developer",
+        "Laravel Developer",
+        "Vue.js Developer",
+        "Python Developer",
+        "Shopify Developer",
+        "Odoo Developer",
+        "AWS",
+        "Portfolio",
+        "India",
+        "Kanniyakumari",
+        "Tamil Nadu",
+    ],
+    authors: [{ name: "Aswin Blix T.C", url: "https://aswin-blix.github.io" }],
+    creator: "Aswin Blix T.C",
+    openGraph: {
+        type: "website",
+        locale: "en_US",
+        url: "https://aswin-blix.github.io",
+        siteName: "Aswin Blix Portfolio",
+        title: "Aswin Blix T.C — AI-Native Full Stack Engineer",
+        description:
+            "Portfolio of Aswin Blix T.C — AI-Native Full Stack Engineer with 4+ years of experience building clean, modern web solutions using React, Next.js, Laravel, Vue.js, Python, Shopify, Odoo, and AWS.",
+        images: [
+            {
+                url: "/card.png",
+                width: 1200,
+                height: 630,
+                alt: "Aswin Blix T.C — AI-Native Full Stack Engineer",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Aswin Blix T.C — AI-Native Full Stack Engineer",
+        description:
+            "Portfolio of Aswin Blix T.C — AI-Native Full Stack Engineer with 4+ years of experience building clean, modern web solutions using React, Next.js, Laravel, Vue.js, Python, Shopify, Odoo, and AWS.",
+        creator: "@aswinblix",
+        images: ["/card.png"],
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            "max-video-preview": -1,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+        },
+    },
+    alternates: {
+        canonical: "https://aswin-blix.github.io",
+    },
+    icons: {
+        icon: "/favicon.ico",
+        shortcut: "/favicon.ico",
+    },
+    manifest: "/manifest.json",
 };
 
 export default function RootLayout({ children }) {

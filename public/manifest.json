@@ -1,0 +1,21 @@
+{
+    "name": "Aswin Blix Portfolio",
+    "short_name": "Aswin Blix",
+    "description": "Portfolio of Aswin Blix T.C — AI-Native Full Stack Engineer",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0d1224",
+    "theme_color": "#7c3aed",
+    "icons": [
+        {
+            "src": "/favicon.ico",
+            "sizes": "any",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "/logo.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
