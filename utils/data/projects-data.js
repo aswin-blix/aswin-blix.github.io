@@ -127,9 +127,9 @@ export const projectsData = [
     },
     {
         id: 7,
-        name: "Speedify - Network Speed Monitor",
+        name: "Speedify v2 - Network Speed Monitor",
         description:
-            "I have designed and developed Speedify, a modern, cross-platform network speed monitoring desktop application. I created the UI using Python and Tkinter, implementing a custom glassmorphism design with layered transparency, rounded corners, and dynamic visual effects. The app features real-time download and upload tracking with high accuracy, a draggable always-on-top window, and efficient resource usage. I utilized the psutil library for system-level network statistics and threading to ensure a smooth, responsive user experience.",
+            "I designed and developed Speedify v2, a lightweight Windows desktop utility that displays real-time network speeds in a borderless, pill-shaped always-on-top overlay. Built with Python and Tkinter, it features a dark glassmorphism UI with chroma-key transparency and dynamic color intensification based on connection speed. The app uses an 8-sample sliding window for accurate speed averaging with automatic unit conversion between KB/s, Mbps, and Gbps. Persistent window positioning is handled via JSON config stored in AppData, and daemon threading ensures a non-blocking, responsive experience with minimal CPU and memory footprint.",
         tools: [
             "Python",
             "Tkinter",
@@ -139,12 +139,31 @@ export const projectsData = [
             "Glassmorphism UI",
         ],
         role: "Python Developer",
-        code: "",
+        code: "https://github.com/aswin-blix/speedify2",
         demo: "",
         // image: speedify,
     },
     {
         id: 8,
+        name: "Trackify - Personal Finance Manager",
+        description:
+            "I built Trackify, a personal finance management mobile application using Flutter and Dart. The app features a dashboard showing total balance, monthly spending, and income overview, along with full transaction management including swipe-to-delete. I implemented visual spending analytics using donut charts categorized by expense type and six-month income vs. expense comparison charts using the fl_chart library. The app includes intelligent spending recommendations based on user patterns, custom category creation with icon and color selection, dark/light theme support, and offline-first local data storage via SQLite — all without requiring user accounts.",
+        tools: [
+            "Flutter",
+            "Dart",
+            "Provider",
+            "SQLite",
+            "sqflite",
+            "fl_chart",
+            "Google Fonts",
+            "SharedPreferences",
+        ],
+        role: "Flutter Developer",
+        code: "https://github.com/aswin-blix/trackify",
+        demo: "",
+    },
+    {
+        id: 9,
         name: "NSRL Garments Stats",
         description: "A full-stack web application for tracking and analyzing garment manufacturing statistics. I developed the backend using Laravel (PHP) and the frontend with Vue.js, Tailwind CSS, and Bootstrap, incorporating GSAP for animations. The application is deployed on AWS Elastic Beanstalk with a secure custom subdomain configuration using AWS CloudFront and ACM certificates.",
         tools: [
@@ -164,7 +183,7 @@ export const projectsData = [
         // image: nsrl_stats,
     },
     {
-        id: 9,
+        id: 10,
         name: "HR Management System",
         description: "Developed a Desktop and Web Application in C# to manage employee information, facilitating interaction between employees and administration.",
         tools: ["C#", ".NET", "SQL Server", "Desktop App"],
@@ -173,7 +192,7 @@ export const projectsData = [
         demo: "",
     },
     {
-        id: 10,
+        id: 11,
         name: "Smart Manage",
         description: "Created an apartment management system website to streamline operations for apartment owners. Ensuring easy management of daily tasks.",
         tools: ["Web Development", "HTML", "CSS", "PHP"],
@@ -182,7 +201,7 @@ export const projectsData = [
         demo: "",
     },
     {
-        id: 11,
+        id: 12,
         name: "Customer Care Management",
         description: "Built a .NET application featuring service based on customer input, direct online communication, and feedback management.",
         tools: [".NET", "C#", "SQL Server"],
@@ -191,7 +210,7 @@ export const projectsData = [
         demo: "",
     },
     {
-        id: 12,
+        id: 13,
         name: "Whiteoval.in Website",
         description: "Whiteoval.in is a static website, which is created for Whiteoval technologies Pvt Ltd. The main aim of the website is to boost sales.",
         tools: ["HTML", "CSS", "JavaScript", "Static Site"],
