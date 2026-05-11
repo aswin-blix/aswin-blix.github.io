@@ -13,5 +13,5 @@ export const personalData = {
     twitter: "https://twitter.com/aswinblix",
     stackOverflow: "https://stackoverflow.com/users/16927414/aswin-blix",
     devUsername: "aswinblix",
-    resume: "#",
+    resume: "/resume",
 };
