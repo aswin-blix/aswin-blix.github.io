@@ -6,5 +6,11 @@ export default function sitemap() {
             changeFrequency: "monthly",
             priority: 1,
         },
+        {
+            url: "https://aswin-blix.github.io/resume",
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.8,
+        },
     ];
 }
