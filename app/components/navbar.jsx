@@ -1,13 +1,34 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [visible, setVisible] = useState(true);
+    const lastScrollY = useRef(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentY = window.scrollY;
+            // Always show at the very top
+            if (currentY < 10) {
+                setVisible(true);
+            } else if (currentY < lastScrollY.current) {
+                setVisible(true);   // scrolling up
+            } else if (currentY > lastScrollY.current + 5) {
+                setVisible(false);  // scrolling down (5px threshold avoids micro-jitter)
+                setIsOpen(false);   // close mobile menu when hiding
+            }
+            lastScrollY.current = currentY;
+        };
+
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return (
-        <nav className="bg-[#0d1224]/70 backdrop-blur-md sticky top-0 z-50">
+        <nav className={`bg-[#0d1224]/70 backdrop-blur-md sticky top-0 z-[9999] transition-transform duration-300 ${visible ? "translate-y-0" : "-translate-y-full"}`}>
             <div className="flex items-center justify-between py-5">
                 <div className="flex flex-shrink-0 items-center">
                     <Link href="/" className="flex items-center">
