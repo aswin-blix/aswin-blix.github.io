@@ -10,7 +10,7 @@ function Footer() {
                 </div>
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                     <p className="text-sm text-gray-400">
-                        &copy; {new Date().getFullYear()} Developer Portfolio by{" "}
+                        &copy; {new Date().getFullYear()} Developed by{" "}
                         <Link
                             target="_blank"
                             href="https://www.linkedin.com/in/aswin-blix/"

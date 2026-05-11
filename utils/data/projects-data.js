@@ -90,24 +90,6 @@ export const projectsData = [
     },
     {
         id: 5,
-        name: "Yoode Medusa Storefront",
-        description: "I have designed and developed a high-performance e-commerce storefront for Yoode using Next.js 16 and Medusa V2. The application features a custom, responsive UI built with Tailwind CSS, including a dynamic product browsing experience with advanced filtering and sorting. Key features include a real-time shopping cart (drawer and full page), a multi-step checkout process, and a comprehensive customer account system with registration, login, and order history dashboard. I enhanced the backend functionality by implementing custom scripts for inventory management and option sorting, ensuring seamless data integrity.",
-        tools: [
-            "Next.js 16",
-            "Medusa V2",
-            "TypeScript",
-            "Tailwind CSS",
-            "Lucide React",
-            "Sonner (Toasts)",
-            "Medusa JS SDK",
-            "Node.js"
-        ],
-        role: "Full Stack Developer",
-        code: "",
-        demo: ""
-    },
-    {
-        id: 6,
         name: "Yoode - Headless Custom Apparel Store",
         description: "I developed a premium headless e-commerce platform for Yoode using Shopify Hydrogen and Remix. The application features a highly immersive, animated home page built with GSAP (ScrollTrigger, Magnetic Buttons, Parallax) and Tailwind CSS v4. It includes a custom 'Design Studio' that allows users to personalize apparel in real-time. The project leverages the Shopify Storefront API for inventory management and Checkout, optimized for high performance and SEO using Server-Side Rendering (SSR).",
         tools: [
