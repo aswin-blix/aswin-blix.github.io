@@ -1,9 +1,11 @@
 export const personalData = {
     name: "Aswin Blix T.C",
     profile: (process.env.NEXT_PUBLIC_BASE_PATH || "") + "/image/my-profile.jpg",
-    designation: "AI-Native Full Stack Engineer",
-    description: `Hey! I’m Aswin Blix — a passionate programmer dedicated to building clean, modern web experiences. With a strong foundation in the JavaScript ecosystem, I am a quick learner who loves exploring new technologies.
-                Recently, I have evolved my workflow to become an AI-Assisted Developer, leveraging advanced tools to architect solutions across languages like Python and C# with speed and precision. I enjoy solving complex problems to create simple, useful products, and I’m always looking for opportunities that allow me to learn, grow, and build something meaningful.`,
+    designation: "Freelance Shopify & Full-Stack Developer",
+    headline: "I build Shopify storefronts, custom apps, and business systems that are ready to run.",
+    availability: "Available for remote freelance projects",
+    description: `I help e-commerce brands and operations teams turn complex requirements into dependable software. My work covers Shopify themes built from scratch, custom Shopify apps and extensions, headless storefronts, internal CRM and ERP workflows, API integrations, and AWS delivery.
+                Since 2021, I have taken projects from discovery and architecture through implementation, testing, release, production troubleshooting, and documented handoff. I use AI-assisted development where it improves speed and coverage, while keeping decisions, code quality, and verification human-led.`,
     email: "aswinasvin13@gmail.com",
     phone: "+91 9488 131 904",
     address: "Kanniyakumari, Tamil Nadu, India - 629168",

@@ -65,7 +65,7 @@ function AboutSection() {
                                 src={personalData.profile}
                                 width={200}
                                 height={200}
-                                alt="Aswin Blix T.C — AI-Native Full Stack Engineer"
+                                alt="Aswin Blix T.C — Freelance Shopify and Full-Stack Developer"
                                 priority
                                 className="h-[180px] w-[180px] rounded-full object-cover grayscale transition-all duration-700 hover:grayscale-0 sm:h-[200px] sm:w-[200px]"
                             />

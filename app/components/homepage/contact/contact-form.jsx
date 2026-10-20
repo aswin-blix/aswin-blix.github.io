@@ -61,9 +61,9 @@ function ContactForm() {
         <div className="nm-surface rounded-[22px] p-6 shadow-nm-raised sm:p-8">
             <p className="mb-1 text-lg font-extrabold text-nm-text">Send a message</p>
             <p className="mb-6 text-xs leading-relaxed text-nm-muted">
-                {
-                    "Have a question or an opportunity in mind? I'm open to any work that aligns with my skills and interests."
-                }
+                Tell me what you are building, what is currently blocked, and the outcome you need.
+                Shopify themes, custom apps, integrations, full-stack systems, and production fixes
+                are all welcome.
             </p>
 
             <div className="flex flex-col gap-4">
@@ -109,7 +109,7 @@ function ContactForm() {
                         name="message"
                         required
                         rows="5"
-                        placeholder="Tell me about your project…"
+                        placeholder="Project type, current setup, scope, timeline, and the main problem to solve…"
                         onChange={(e) => setInput({ ...input, message: e.target.value })}
                         onBlur={checkRequired}
                         value={input.message}

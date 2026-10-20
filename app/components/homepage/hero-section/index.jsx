@@ -8,17 +8,18 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ScrambleTextPlugin from "gsap/ScrambleTextPlugin";
-import { FiArrowDown, FiDownload } from "react-icons/fi";
+import { FiArrowDown, FiArrowUpRight, FiDownload } from "react-icons/fi";
 
 gsap.registerPlugin(ScrollTrigger, ScrambleTextPlugin);
 
-const [firstName, ...restName] = personalData.name.split(" ");
-const lastName = restName.join(" ");
-
 const STATS = [
-    { value: 4, suffix: "+", label: "Years" },
-    { value: projectsData.length, suffix: "", label: "Projects" },
-    { value: 5, suffix: "+", label: "Clients" },
+    { value: 5, suffix: "+", label: "Years" },
+    {
+        value: projectsData.filter((project) => project.featured).length,
+        suffix: "",
+        label: "Featured Builds",
+    },
+    { value: 4, suffix: "", label: "Core Services" },
     { value: 2021, suffix: "", label: "Since" },
 ];
 
@@ -89,31 +90,42 @@ function HeroSection() {
                 <div className="lg:col-span-3">
                     <span className="hero-rise nm-surface mb-7 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-nm-muted shadow-nm-inset">
                         <span className="h-2 w-2 rounded-full bg-nm-text" />
-                        Available for work
+                        {personalData.availability}
                     </span>
 
                     <h1
                         aria-label={`${personalData.name} — ${personalData.designation}`}
-                        className="text-[clamp(40px,6vw,72px)] font-black leading-[0.95] tracking-[-0.04em]"
+                        className="max-w-3xl text-[clamp(38px,5.6vw,68px)] font-black leading-[1] tracking-[-0.045em]"
                     >
-                        <span className="hero-rise hero-scramble block text-nm-text">{firstName}</span>
-                        <span className="hero-rise hero-scramble block text-nm-muted">{lastName}</span>
+                        <span className="hero-rise hero-scramble text-nm-text">
+                            Shopify storefronts,
+                        </span>{" "}
+                        <span className="hero-rise hero-scramble text-nm-muted">
+                            custom apps &amp; business systems.
+                        </span>
                     </h1>
 
-                    <p className="hero-rise mt-6 text-sm font-medium text-nm-muted">
-                        {personalData.designation}
+                    <p className="hero-rise mt-6 max-w-2xl text-base font-medium leading-7 text-nm-muted">
+                        {personalData.headline}
                     </p>
-                    <p className="hero-rise mt-1.5 font-mono text-[13px] text-nm-faint">
-                        4+ years · React · Next.js · Laravel · AWS · Shopify · Odoo
+                    <p className="hero-rise mt-3 font-mono text-[12px] leading-6 text-nm-faint">
+                        {personalData.name} · {personalData.designation} · Remote from India
                     </p>
 
                     <div className="hero-rise mt-9 flex flex-wrap items-center gap-3">
-                        <a href="#projects" className="nm-btn-primary px-6 py-3">
-                            View Projects
+                        <a href="#contact" className="nm-btn-primary px-6 py-3">
+                            Discuss Your Project
+                            <FiArrowUpRight size={15} />
+                        </a>
+                        <a href="#projects" className="nm-btn px-6 py-3">
+                            View Selected Work
                             <FiArrowDown size={15} />
                         </a>
-                        <Link href={personalData.resume} className="nm-btn px-6 py-3">
-                            Get Resume
+                        <Link
+                            href={personalData.resume}
+                            className="inline-flex items-center gap-2 px-3 py-3 text-sm font-semibold text-nm-muted transition-colors hover:text-nm-text"
+                        >
+                            Resume
                             <FiDownload size={15} />
                         </Link>
                     </div>
@@ -145,15 +157,15 @@ function HeroSection() {
                                 <span className="text-nm-faint">const</span>{" "}
                                 <span className="text-nm-text">coder</span> = {"{"}
                                 {"\n"}  name: <span className="text-nm-text">{"'Aswin Blix'"}</span>,
-                                {"\n"}  role: <span className="text-nm-text">{`'${personalData.designation}'`}</span>,
-                                {"\n"}  stack: [<span className="text-nm-text">{"'Next.js'"}</span>,{" "}
-                                <span className="text-nm-text">{"'Laravel'"}</span>,{" "}
-                                <span className="text-nm-text">{"'AWS'"}</span>],
-                                {"\n"}  builds: [<span className="text-nm-text">{"'commerce'"}</span>,{" "}
-                                <span className="text-nm-text">{"'ERP'"}</span>,{" "}
-                                <span className="text-nm-text">{"'design systems'"}</span>],
-                                {"\n"}  shipped: <span className="text-nm-text">{projectsData.length}</span>,
-                                {"\n"}  hireable: <span className="text-nm-text">() =&gt; true</span>,
+                                {"\n"}  role: <span className="text-nm-text">{"'Shopify + Full Stack'"}</span>,
+                                {"\n"}  services: [<span className="text-nm-text">{"'themes'"}</span>,{" "}
+                                <span className="text-nm-text">{"'apps'"}</span>,{" "}
+                                <span className="text-nm-text">{"'cloud'"}</span>],
+                                {"\n"}  delivery: [<span className="text-nm-text">{"'build'"}</span>,{" "}
+                                <span className="text-nm-text">{"'test'"}</span>,{" "}
+                                <span className="text-nm-text">{"'release'"}</span>],
+                                {"\n"}  collaboration: <span className="text-nm-text">{"'remote'"}</span>,
+                                {"\n"}  available: <span className="text-nm-text">true</span>,
                                 {"\n"}
                                 {"}"}
                                 <span className="blink text-nm-text">_</span>

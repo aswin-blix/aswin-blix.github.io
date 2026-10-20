@@ -59,11 +59,38 @@ export default function ProjectModal({ project, icon: Icon, onClose }) {
                 <h3 className="mt-4 pr-10 text-xl font-extrabold tracking-tight text-nm-text">
                     {project.name}
                 </h3>
-                <span className="nm-tag mt-2.5 inline-block px-3 py-1 text-[11px] text-nm-muted">
-                    {project.role}
-                </span>
+                <div className="mt-2.5 flex flex-wrap gap-2">
+                    <span className="nm-tag inline-block px-3 py-1 text-[11px] text-nm-muted">
+                        {project.role}
+                    </span>
+                    {project.status && (
+                        <span className="nm-tag inline-block px-3 py-1 text-[11px] text-nm-muted">
+                            {project.status}
+                        </span>
+                    )}
+                </div>
 
                 <p className="mt-5 text-sm leading-[1.7] text-nm-muted">{project.description}</p>
+
+                {project.highlights?.length > 0 && (
+                    <>
+                        <div className="mb-3 mt-6 flex items-center gap-4">
+                            <span className="nm-label">What I Delivered</span>
+                            <span className="nm-rule" />
+                        </div>
+                        <ul className="space-y-3">
+                            {project.highlights.map((highlight) => (
+                                <li
+                                    key={highlight}
+                                    className="flex gap-3 text-xs leading-5 text-nm-muted"
+                                >
+                                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-nm-text" />
+                                    <span>{highlight}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </>
+                )}
 
                 <div className="mt-6 mb-3 flex items-center gap-4">
                     <span className="nm-label">Tech Stack</span>

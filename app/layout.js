@@ -17,15 +17,19 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata = {
     metadataBase: new URL("https://aswin-blix.github.io"),
     title: {
-        default: "Aswin Blix T.C — AI-Native Full Stack Engineer",
+        default: "Aswin Blix — Freelance Shopify & Full-Stack Developer",
         template: "%s | Aswin Blix",
     },
     description:
-        "Portfolio of Aswin Blix T.C — AI-Native Full Stack Engineer with 4+ years of experience building clean, modern web solutions using React, Next.js, Laravel, Vue.js, Python, Shopify, Odoo, and AWS.",
+        "Freelance Shopify and full-stack developer building custom themes, private apps, headless storefronts, business systems, integrations, and AWS delivery.",
     keywords: [
         "Aswin Blix",
         "Full Stack Developer",
-        "AI-Native Engineer",
+        "Freelance Shopify Developer",
+        "Shopify Theme Developer",
+        "Shopify App Developer",
+        "Shopify Liquid Developer",
+        "Headless Commerce Developer",
         "React Developer",
         "Next.js Developer",
         "Laravel Developer",
@@ -46,23 +50,23 @@ export const metadata = {
         locale: "en_US",
         url: "https://aswin-blix.github.io",
         siteName: "Aswin Blix Portfolio",
-        title: "Aswin Blix T.C — AI-Native Full Stack Engineer",
+        title: "Aswin Blix — Freelance Shopify & Full-Stack Developer",
         description:
-            "Portfolio of Aswin Blix T.C — AI-Native Full Stack Engineer with 4+ years of experience building clean, modern web solutions using React, Next.js, Laravel, Vue.js, Python, Shopify, Odoo, and AWS.",
+            "Custom Shopify themes, private apps, headless commerce, business systems, integrations, and AWS delivery for remote clients.",
         images: [
             {
                 url: "/card.png",
                 width: 1200,
                 height: 630,
-                alt: "Aswin Blix T.C — AI-Native Full Stack Engineer",
+                alt: "Aswin Blix — Freelance Shopify and Full-Stack Developer",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Aswin Blix T.C — AI-Native Full Stack Engineer",
+        title: "Aswin Blix — Freelance Shopify & Full-Stack Developer",
         description:
-            "Portfolio of Aswin Blix T.C — AI-Native Full Stack Engineer with 4+ years of experience building clean, modern web solutions using React, Next.js, Laravel, Vue.js, Python, Shopify, Odoo, and AWS.",
+            "Custom Shopify themes, private apps, headless commerce, business systems, integrations, and AWS delivery for remote clients.",
         site: "@aswinblix",
         creator: "@aswinblix",
         images: ["/card.png"],

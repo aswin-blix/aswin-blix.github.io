@@ -1,6 +1,6 @@
 # Aswin Blix — Portfolio
 
-Personal portfolio website of **Aswin Blix T.C**, an AI-Native Full Stack Engineer. Built with Next.js 14 and deployed on GitHub Pages.
+Freelance portfolio of **Aswin Blix T.C**, a Shopify and full-stack developer building custom themes, private apps, headless storefronts, business systems, and AWS delivery. Built with Next.js 14 and deployed on GitHub Pages.
 
 **Live:** [aswin-blix.github.io](https://aswin-blix.github.io)
 
@@ -34,13 +34,14 @@ Design language: **Futuristic Neumorphism** — soft extruded/inset surfaces on 
 
 ## Sections
 
-- **Hero** — Intro, animated stat counters, and a monospace code snippet
+- **Hero** — Buyer-focused positioning, project CTA, animated proof counters, and a monospace capability snippet
+- **Services** — Shopify themes, custom apps, headless commerce, and full-stack/cloud delivery
+- **Selected Work** — Featured Shopify and commerce case studies followed by the wider project archive
 - **About** — Profile card with social links and a decorative Lottie
 - **Experience** — Work history as a card grid
 - **Skills** — Floating neumorphic pill cloud
-- **Projects** — Masonry card grid with a click-through detail modal
 - **Education** — Responsive card grid (2×2 → single row)
-- **Contact** — EmailJS form + contact info cards
+- **Contact** — Freelance project brief prompt, EmailJS form, and contact info cards
 
 ## Design System & Theming
 
@@ -85,8 +86,9 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 │   └── page.js
 ├── utils/
 │   └── data/                   # All portfolio content
-│       ├── personal-data.js    # Name, role, links, contact
-│       ├── projects-data.js
+│       ├── personal-data.js    # Positioning, name, links, contact
+│       ├── services-data.js    # Freelance service offers and deliverables
+│       ├── projects-data.js    # Featured work and wider project archive
 │       ├── experience.js
 │       ├── educations.js
 │       └── skills.js

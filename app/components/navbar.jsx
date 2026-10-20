@@ -8,10 +8,9 @@ import gsap from "gsap";
 import { FiSun, FiMoon, FiArrowUpRight, FiMenu, FiX } from "react-icons/fi";
 
 const NAV_LINKS = [
+    { label: "Services", href: "#services" },
+    { label: "Work", href: "#projects" },
     { label: "About", href: "#about" },
-    { label: "Experience", href: "#experience" },
-    { label: "Skills", href: "#skills" },
-    { label: "Projects", href: "#projects" },
     { label: "Contact", href: "#contact" },
 ];
 

@@ -103,7 +103,17 @@ function Projects() {
 
     return (
         <section ref={containerRef} id="projects" className="nm-section">
-            <SectionHeading title="Projects" />
+            <SectionHeading title="Selected Work" />
+
+            <div className="mb-8 max-w-3xl">
+                <h2 className="text-2xl font-extrabold tracking-tight text-nm-text sm:text-3xl">
+                    Commerce, operations, and production systems built end to end.
+                </h2>
+                <p className="mt-3 text-sm leading-7 text-nm-muted">
+                    Featured projects lead with Shopify theme and app work. Private client systems
+                    are clearly labelled where source code and live access cannot be shared.
+                </p>
+            </div>
 
             <div ref={gridRef} className="gap-4 sm:columns-2 sm:gap-5 lg:columns-3">
                 {visibleProjects.map((project) => {
@@ -154,6 +164,11 @@ function Projects() {
                                 <span className="nm-tag mt-2 inline-block text-nm-muted">
                                     {project.role}
                                 </span>
+                                {project.status && (
+                                    <span className="nm-tag ml-1.5 mt-2 inline-block text-nm-muted">
+                                        {project.status}
+                                    </span>
+                                )}
                             </div>
 
                             <p className="line-clamp-3 text-xs leading-relaxed text-nm-muted">

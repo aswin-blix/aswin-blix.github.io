@@ -1,7 +1,7 @@
 export const experiences = [
     {
         id: 1,
-        title: "AI-Assisted Full-Stack & Creative Web Developer",
+        title: "Shopify & Full-Stack Engineer",
         company: "BitsNPixs Technologies.",
         duration: "(Jan 2021 - Present)",
     },

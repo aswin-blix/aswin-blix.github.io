@@ -5,6 +5,7 @@ import { experiences } from "@/utils/data/experience";
 import { educations } from "@/utils/data/educations";
 import { skillsData } from "@/utils/data/skills";
 import { projectsData } from "@/utils/data/projects-data";
+import { servicesData } from "@/utils/data/services-data";
 import Link from "next/link";
 import { MdDownload } from "react-icons/md";
 import { IoArrowBack } from "react-icons/io5";
@@ -15,6 +16,7 @@ import "../css/resume-print.scss";
 
 export default function ResumePage() {
     const handleDownload = () => window.print();
+    const selectedProjects = projectsData.filter((project) => project.featured);
 
     return (
         <div className="resume-wrapper py-6 lg:py-10">
@@ -104,6 +106,25 @@ export default function ResumePage() {
                         </p>
                     </section>
 
+                    <section>
+                        <SectionHeading title="Freelance Services" />
+                        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                            {servicesData.map((service) => (
+                                <div
+                                    key={service.id}
+                                    className="nm-surface rounded-[14px] p-3 shadow-nm-raised-sm"
+                                >
+                                    <p className="text-xs font-semibold text-nm-text">
+                                        {service.title}
+                                    </p>
+                                    <p className="mt-1 text-[10px] leading-relaxed text-nm-muted">
+                                        {service.summary}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+
                     {/* Experience */}
                     <section>
                         <SectionHeading title="Experience" />
@@ -131,7 +152,7 @@ export default function ResumePage() {
                     <section>
                         <SectionHeading title="Projects" />
                         <div className="projects-grid space-y-4">
-                            {projectsData.map((project) => (
+                            {selectedProjects.map((project) => (
                                 <div
                                     key={project.id}
                                     className="project-card nm-surface rounded-[16px] p-4 shadow-nm-raised"
