@@ -16,7 +16,7 @@ function Footer() {
 
     return (
         <footer className="nm-surface mt-12 w-full sm:mt-20">
-            <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-6 px-5 py-8 sm:px-8 sm:py-10 md:flex-row md:justify-between">
+            <div className="mx-auto flex max-w-[1440px] flex-col items-center gap-6 px-5 py-8 sm:px-8 sm:py-10 md:flex-row md:justify-between xl:px-10">
                 <p className="order-2 text-center text-xs text-nm-muted md:order-1 md:text-left">
                     &copy; {year} — Developed by{" "}
                     <span className="font-semibold text-nm-text">Aswin Blix T.C</span> — Kanniyakumari,

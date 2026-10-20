@@ -107,7 +107,7 @@ export default function RootLayout({ children }) {
                 >
                     <ToastContainer theme="dark" />
                     <ScrollProgress />
-                    <main className="relative mx-auto min-h-screen w-full max-w-[1200px] px-5 sm:px-8">
+                    <main className="relative mx-auto min-h-screen w-full max-w-[1440px] px-5 sm:px-8 xl:px-10">
                         <Navbar />
                         {children}
                     </main>

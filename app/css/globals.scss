@@ -101,7 +101,7 @@ body {
 @layer components {
     /* Consistent vertical rhythm for every homepage section */
     .nm-section {
-        @apply scroll-mt-24 py-12 sm:py-16 lg:py-24;
+        @apply scroll-mt-24 py-12 sm:py-16;
     }
 
     /* Raised pill button — presses in on hover/active */

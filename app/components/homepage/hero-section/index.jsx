@@ -84,8 +84,8 @@ function HeroSection() {
     );
 
     return (
-        <section ref={containerRef} className="py-8 sm:py-12 lg:py-20">
-            <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-5 lg:gap-12">
+        <section ref={containerRef} className="py-8 sm:py-12 lg:py-16">
+            <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-5 lg:gap-12 xl:gap-16">
                 {/* LEFT — 60% */}
                 <div className="lg:col-span-3">
                     <span className="hero-rise nm-surface mb-7 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-base font-semibold uppercase tracking-wider text-nm-muted shadow-nm-inset">

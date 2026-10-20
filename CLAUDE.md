@@ -24,6 +24,7 @@ There are no tests. Verify changes with `npm run build` (must compile + prerende
 - **`.github/workflows/`** deploy pipeline — leave as-is.
 - **Black & white only.** Never introduce coloured values (no hex hues, no coloured icons/gradients). Use the design tokens.
 - **Readable text is 16px minimum on screen.** Tailwind `text-xs` and `text-sm` intentionally resolve to `1rem`; do not add arbitrary font sizes below 16px. Print-only resume styles may use smaller point sizes.
+- **Shared page shell.** Keep the main content and footer aligned to the same responsive `1440px` maximum width and horizontal gutters.
 
 ## Design system (single source of truth)
 
