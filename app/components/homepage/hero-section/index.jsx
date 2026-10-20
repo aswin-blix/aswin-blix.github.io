@@ -1,6 +1,6 @@
 "use client";
 
-import { personalData } from "@/utils/data/personal-data";
+import { careerStartYear, personalData } from "@/utils/data/personal-data";
 import { projectsData } from "@/utils/data/projects-data";
 import Link from "next/link";
 import { useRef } from "react";
@@ -13,14 +13,14 @@ import { FiArrowDown, FiArrowUpRight, FiDownload } from "react-icons/fi";
 gsap.registerPlugin(ScrollTrigger, ScrambleTextPlugin);
 
 const STATS = [
-    { value: 5, suffix: "+", label: "Years" },
+    { value: new Date().getFullYear() - careerStartYear, suffix: "+", label: "Years" },
     {
         value: projectsData.filter((project) => project.featured).length,
         suffix: "",
         label: "Featured Builds",
     },
     { value: 4, suffix: "", label: "Core Services" },
-    { value: 2021, suffix: "", label: "Since" },
+    { value: careerStartYear, suffix: "", label: "Since" },
 ];
 
 function HeroSection() {
@@ -86,8 +86,9 @@ function HeroSection() {
     return (
         <section ref={containerRef} className="py-8 sm:py-12 lg:py-16">
             <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-5 lg:gap-12 xl:gap-16">
+                {/* min-w-0 + emergency wrapping contain ScrambleText's temporary unbroken text. */}
                 {/* LEFT — 60% */}
-                <div className="lg:col-span-3">
+                <div className="min-w-0 lg:col-span-3">
                     <span className="hero-rise nm-surface mb-7 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-base font-semibold uppercase tracking-wider text-nm-muted shadow-nm-inset">
                         <span className="h-2 w-2 rounded-full bg-nm-text" />
                         {personalData.availability}
@@ -95,7 +96,7 @@ function HeroSection() {
 
                     <h1
                         aria-label={`${personalData.name} — ${personalData.designation}`}
-                        className="max-w-3xl text-[clamp(38px,5.6vw,68px)] font-black leading-[1] tracking-[-0.045em]"
+                        className="w-full min-w-0 max-w-3xl [overflow-wrap:anywhere] text-[clamp(38px,5.6vw,68px)] font-black leading-[1] tracking-[-0.045em]"
                     >
                         <span className="hero-rise hero-scramble text-nm-text">
                             Shopify storefronts,
@@ -132,7 +133,7 @@ function HeroSection() {
                 </div>
 
                 {/* RIGHT — 40% */}
-                <div className="hero-parallax lg:col-span-2">
+                <div className="hero-parallax min-w-0 lg:col-span-2">
                     <div className="grid grid-cols-2 gap-4">
                         {STATS.map((stat) => (
                             <div
