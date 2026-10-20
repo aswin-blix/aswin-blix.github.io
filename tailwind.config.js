@@ -29,6 +29,12 @@ module.exports = {
             fontFamily: {
                 mono: ["var(--font-mono)", "monospace"],
             },
+            // Keep every readable Tailwind text tier at 16px or above.
+            // Print-specific resume sizing is handled separately in resume-print.scss.
+            fontSize: {
+                xs: ["1rem", { lineHeight: "1.5rem" }],
+                sm: ["1rem", { lineHeight: "1.5rem" }],
+            },
             backgroundImage: {
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
                 "gradient-conic":

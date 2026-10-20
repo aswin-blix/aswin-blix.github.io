@@ -115,7 +115,7 @@ function Navbar() {
                         <li key={link.href} className="nm-nav-item">
                             <a
                                 href={link.href}
-                                className="block rounded-full px-4 py-2 text-[13px] font-medium text-nm-muted transition-all duration-200 hover:text-nm-text hover:shadow-nm-inset"
+                                className="block rounded-full px-4 py-2 text-base font-medium text-nm-muted transition-all duration-200 hover:text-nm-text hover:shadow-nm-inset"
                             >
                                 {link.label}
                             </a>
@@ -144,7 +144,7 @@ function Navbar() {
                         onMouseDown={pressDown}
                         onMouseUp={pressUp}
                         onMouseLeave={pressUp}
-                        className="nm-nav-item nm-btn hidden gap-1.5 px-5 py-2 text-[13px] sm:inline-flex"
+                        className="nm-nav-item nm-btn hidden gap-1.5 px-5 py-2 text-base sm:inline-flex"
                     >
                         Hire me
                         <FiArrowUpRight size={15} />

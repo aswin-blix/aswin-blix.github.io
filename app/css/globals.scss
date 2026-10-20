@@ -73,6 +73,7 @@ html {
 body {
     color: var(--nm-text);
     background-color: var(--nm-bg);
+    overflow-x: clip;
     transition: background-color 0.4s ease, color 0.4s ease;
 }
 
@@ -137,13 +138,13 @@ body {
     /* Inset mini tag / chip (dates, tech tags, role badges) */
     .nm-tag {
         background: var(--nm-bg);
-        @apply rounded-full px-2.5 py-1 text-[10px] font-medium text-nm-faint shadow-nm-inset-sm;
+        @apply rounded-full px-2.5 py-1 text-base font-medium leading-6 text-nm-faint shadow-nm-inset-sm;
     }
 
     /* Raised pill (skills cloud) — presses in on hover */
     .nm-chip {
         background: var(--nm-bg);
-        @apply rounded-full px-[18px] py-2 text-xs font-semibold text-nm-muted
+        @apply rounded-full px-[18px] py-2 text-base font-semibold leading-6 text-nm-muted
             shadow-nm-raised transition-all duration-200;
     }
     .nm-chip:hover {
@@ -153,7 +154,8 @@ body {
 
 /* Section label — tiny uppercase tracker (stat labels, form labels, sub-labels) */
 .nm-label {
-    font-size: 10px;
+    font-size: 16px;
+    line-height: 1.5;
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;

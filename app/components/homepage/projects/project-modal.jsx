@@ -60,11 +60,11 @@ export default function ProjectModal({ project, icon: Icon, onClose }) {
                     {project.name}
                 </h3>
                 <div className="mt-2.5 flex flex-wrap gap-2">
-                    <span className="nm-tag inline-block px-3 py-1 text-[11px] text-nm-muted">
+                    <span className="nm-tag inline-block px-3 py-1 text-base text-nm-muted">
                         {project.role}
                     </span>
                     {project.status && (
-                        <span className="nm-tag inline-block px-3 py-1 text-[11px] text-nm-muted">
+                        <span className="nm-tag inline-block px-3 py-1 text-base text-nm-muted">
                             {project.status}
                         </span>
                     )}
@@ -98,7 +98,7 @@ export default function ProjectModal({ project, icon: Icon, onClose }) {
                 </div>
                 <div className="flex flex-wrap gap-2">
                     {project.tools.map((tool) => (
-                        <span key={tool} className="nm-tag px-3 py-1 text-[11px]">
+                        <span key={tool} className="nm-tag px-3 py-1 text-base">
                             {tool}
                         </span>
                     ))}

@@ -88,7 +88,7 @@ function HeroSection() {
             <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-5 lg:gap-12">
                 {/* LEFT — 60% */}
                 <div className="lg:col-span-3">
-                    <span className="hero-rise nm-surface mb-7 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-nm-muted shadow-nm-inset">
+                    <span className="hero-rise nm-surface mb-7 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-base font-semibold uppercase tracking-wider text-nm-muted shadow-nm-inset">
                         <span className="h-2 w-2 rounded-full bg-nm-text" />
                         {personalData.availability}
                     </span>
@@ -108,7 +108,7 @@ function HeroSection() {
                     <p className="hero-rise mt-6 max-w-2xl text-base font-medium leading-7 text-nm-muted">
                         {personalData.headline}
                     </p>
-                    <p className="hero-rise mt-3 font-mono text-[12px] leading-6 text-nm-faint">
+                    <p className="hero-rise mt-3 font-mono text-base leading-6 text-nm-faint">
                         {personalData.name} · {personalData.designation} · Remote from India
                     </p>
 
@@ -152,7 +152,7 @@ function HeroSection() {
 
                     {/* Code block */}
                     <div className="hero-code nm-surface mt-4 rounded-3xl p-5 shadow-nm-inset">
-                        <pre className="overflow-x-auto font-mono text-[11px] leading-relaxed text-nm-muted">
+                        <pre className="overflow-x-auto font-mono text-base leading-relaxed text-nm-muted">
                             <code>
                                 <span className="text-nm-faint">const</span>{" "}
                                 <span className="text-nm-text">coder</span> = {"{"}

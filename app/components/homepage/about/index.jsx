@@ -90,7 +90,7 @@ function AboutSection() {
                         <h3 className="mb-4 text-2xl font-extrabold tracking-tight text-nm-text sm:text-[28px]">
                             Hey! I&apos;m Aswin Blix
                         </h3>
-                        <p className="max-w-2xl text-[15px] leading-[1.8] text-nm-muted">
+                        <p className="max-w-2xl text-base leading-[1.8] text-nm-muted">
                             {personalData.description}
                         </p>
                     </div>

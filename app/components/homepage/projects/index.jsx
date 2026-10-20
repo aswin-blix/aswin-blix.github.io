@@ -186,7 +186,7 @@ function Projects() {
                                 )}
                             </div>
 
-                            <span className="mt-1 flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider text-nm-faint transition-colors duration-200 group-hover:text-nm-text">
+                            <span className="mt-1 flex items-center gap-1 text-base font-semibold uppercase tracking-wider text-nm-faint transition-colors duration-200 group-hover:text-nm-text">
                                 View details
                                 <FiArrowUpRight size={12} />
                             </span>

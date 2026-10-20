@@ -41,12 +41,12 @@ function Experience() {
                         key={exp.id}
                         className="exp-card nm-surface relative flex flex-col gap-3 rounded-[20px] p-6 shadow-nm-raised"
                     >
-                        <span className="nm-tag w-fit px-3.5 py-1.5 text-[11px] text-nm-muted">
+                        <span className="nm-tag w-fit px-3.5 py-1.5 text-base text-nm-muted">
                             {exp.duration.replace(/[()]/g, "")}
                         </span>
 
                         <div className="pr-12">
-                            <h3 className="text-[15px] font-extrabold leading-snug text-nm-text">
+                            <h3 className="text-base font-extrabold leading-snug text-nm-text">
                                 {exp.company.replace(/\.$/, "")}
                             </h3>
                             <p className="mt-1 text-xs text-nm-muted">{exp.title}</p>

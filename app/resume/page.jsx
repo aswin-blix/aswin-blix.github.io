@@ -117,7 +117,7 @@ export default function ResumePage() {
                                     <p className="text-xs font-semibold text-nm-text">
                                         {service.title}
                                     </p>
-                                    <p className="mt-1 text-[10px] leading-relaxed text-nm-muted">
+                                    <p className="mt-1 text-base leading-relaxed text-nm-muted">
                                         {service.summary}
                                     </p>
                                 </div>
@@ -171,7 +171,7 @@ export default function ResumePage() {
                                                 <a
                                                     href={project.demo}
                                                     target="_blank"
-                                                    className="flex items-center gap-1 text-[10px] text-nm-muted transition-colors hover:text-nm-text"
+                                                    className="flex items-center gap-1 text-base text-nm-muted transition-colors hover:text-nm-text"
                                                 >
                                                     <BsBoxArrowUpRight size={10} />
                                                     Live
@@ -181,7 +181,7 @@ export default function ResumePage() {
                                                 <a
                                                     href={project.code}
                                                     target="_blank"
-                                                    className="flex items-center gap-1 text-[10px] text-nm-muted transition-colors hover:text-nm-text"
+                                                    className="flex items-center gap-1 text-base text-nm-muted transition-colors hover:text-nm-text"
                                                 >
                                                     <BsGithub size={10} />
                                                     Code

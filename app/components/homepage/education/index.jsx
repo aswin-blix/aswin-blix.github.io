@@ -58,7 +58,7 @@ function Education() {
                         key={edu.id}
                         className="edu-card nm-surface flex flex-col items-center justify-center gap-4 rounded-[20px] p-5 text-center shadow-nm-raised sm:gap-5 sm:p-7"
                     >
-                        <span className="nm-tag px-3 py-1.5 text-nm-muted sm:px-3.5 sm:text-[11px]">
+                        <span className="nm-tag px-3 py-1.5 text-base text-nm-muted sm:px-3.5">
                             {edu.duration}
                         </span>
 
@@ -67,10 +67,10 @@ function Education() {
                         </div>
 
                         <div>
-                            <h3 className="text-[13px] font-extrabold leading-snug text-nm-text sm:text-sm">
+                            <h3 className="text-base font-extrabold leading-snug text-nm-text">
                                 {edu.title}
                             </h3>
-                            <p className="mt-1.5 text-[11px] text-nm-muted sm:text-xs">
+                            <p className="mt-1.5 text-base text-nm-muted">
                                 {edu.institution}
                             </p>
                         </div>

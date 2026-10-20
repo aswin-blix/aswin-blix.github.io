@@ -25,6 +25,7 @@ Design language: **Futuristic Neumorphism** — soft extruded/inset surfaces on 
 
 - Neumorphic black-and-white design system with a **light/dark toggle** (next-themes)
 - Fully responsive, mobile-first layout
+- 16px minimum on-screen text size for readable navigation, labels, cards, forms, and supporting copy
 - GSAP motion: scramble hero text, scroll-progress rail, hero depth parallax, and 3D "extrude-in" card entrances
 - **Project detail modal** (full description, tech stack, links; Esc / backdrop close, scroll lock)
 - Projects "show more" toggle to keep the grid compact
