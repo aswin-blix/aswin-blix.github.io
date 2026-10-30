@@ -7,10 +7,10 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ScrambleTextPlugin from "gsap/ScrambleTextPlugin";
 import { FiArrowDown, FiArrowUpRight, FiDownload } from "react-icons/fi";
+import KineticHeadline from "./kinetic-headline";
 
-gsap.registerPlugin(ScrollTrigger, ScrambleTextPlugin);
+gsap.registerPlugin(ScrollTrigger);
 
 const STATS = [
     { value: new Date().getFullYear() - careerStartYear, suffix: "+", label: "Years" },
@@ -34,17 +34,7 @@ function HeroSection() {
                 ".hero-rise",
                 { opacity: 0, y: 24 },
                 { opacity: 1, y: 0, duration: 0.7, stagger: 0.12, ease: "power3.out" }
-            )
-                .from(
-                    ".hero-scramble",
-                    {
-                        duration: 1.4,
-                        scrambleText: { chars: "upperAndLowerCase", speed: 0.35 },
-                        stagger: 0.15,
-                    },
-                    "-=0.9"
-                )
-                .fromTo(
+            ).fromTo(
                     ".hero-code",
                     { opacity: 0, x: 40 },
                     { opacity: 1, x: 0, duration: 0.9, ease: "power3.out" },
@@ -86,7 +76,6 @@ function HeroSection() {
     return (
         <section ref={containerRef} className="py-8 sm:py-12 lg:py-16">
             <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-5 lg:gap-12 xl:gap-16">
-                {/* min-w-0 + emergency wrapping contain ScrambleText's temporary unbroken text. */}
                 {/* LEFT — 60% */}
                 <div className="min-w-0 lg:col-span-3">
                     <span className="hero-rise nm-surface mb-7 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-base font-semibold uppercase tracking-wider text-nm-muted shadow-nm-inset">
@@ -94,17 +83,7 @@ function HeroSection() {
                         {personalData.availability}
                     </span>
 
-                    <h1
-                        aria-label={`${personalData.name} — ${personalData.designation}`}
-                        className="w-full min-w-0 max-w-3xl [overflow-wrap:anywhere] text-[clamp(38px,5.6vw,68px)] font-black leading-[1] tracking-[-0.045em]"
-                    >
-                        <span className="hero-rise hero-scramble text-nm-text">
-                            Shopify storefronts,
-                        </span>{" "}
-                        <span className="hero-rise hero-scramble text-nm-muted">
-                            custom apps &amp; business systems.
-                        </span>
-                    </h1>
+                    <KineticHeadline delay={0.15} />
 
                     <p className="hero-rise mt-6 max-w-2xl text-base font-medium leading-7 text-nm-muted">
                         {personalData.headline}

@@ -50,6 +50,9 @@
     --nm-scrim: rgba(0, 0, 0, 0.55);
     --nm-elevated: 0 30px 60px -15px rgba(0, 0, 0, 0.45),
                    0 8px 20px -8px rgba(0, 0, 0, 0.3);
+
+    /* Light sweep across a raised surface (.nm-sheen) */
+    --nm-sheen: rgba(255, 255, 255, 0.9);
 }
 
 .dark {
@@ -64,6 +67,8 @@
     --nm-scrim: rgba(0, 0, 0, 0.7);
     --nm-elevated: 0 30px 60px -15px rgba(0, 0, 0, 0.8),
                    0 8px 20px -8px rgba(0, 0, 0, 0.6);
+
+    --nm-sheen: rgba(235, 235, 235, 0.16);
 }
 
 html {
@@ -178,6 +183,11 @@ body {
     height: 4px;
     border-radius: 999px;
     box-shadow: var(--nm-inset-sm);
+}
+
+/* Diagonal light sweep — position absolutely inside an overflow-hidden surface */
+.nm-sheen {
+    background: linear-gradient(105deg, transparent, var(--nm-sheen), transparent);
 }
 
 /* Inset code / form field base */
