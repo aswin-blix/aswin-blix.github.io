@@ -15,7 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-    metadataBase: new URL("https://aswin-blix.github.io"),
+    metadataBase: new URL("https://aswinblix.dev"),
     title: {
         default: "Aswin Blix — Freelance Shopify & Full-Stack Developer",
         template: "%s | Aswin Blix",
@@ -43,12 +43,12 @@ export const metadata = {
         "Kanniyakumari",
         "Tamil Nadu",
     ],
-    authors: [{ name: "Aswin Blix T.C", url: "https://aswin-blix.github.io" }],
+    authors: [{ name: "Aswin Blix T.C", url: "https://aswinblix.dev" }],
     creator: "Aswin Blix T.C",
     openGraph: {
         type: "website",
         locale: "en_US",
-        url: "https://aswin-blix.github.io",
+        url: "https://aswinblix.dev",
         siteName: "Aswin Blix Portfolio",
         title: "Aswin Blix — Freelance Shopify & Full-Stack Developer",
         description:
@@ -83,7 +83,7 @@ export const metadata = {
         },
     },
     alternates: {
-        canonical: "https://aswin-blix.github.io",
+        canonical: "https://aswinblix.dev",
     },
     icons: {
         icon: "/favicon.ico",

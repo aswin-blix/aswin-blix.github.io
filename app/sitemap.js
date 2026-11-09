@@ -1,13 +1,13 @@
 export default function sitemap() {
     return [
         {
-            url: "https://aswin-blix.github.io",
+            url: "https://aswinblix.dev",
             lastModified: new Date(),
             changeFrequency: "monthly",
             priority: 1,
         },
         {
-            url: "https://aswin-blix.github.io/resume",
+            url: "https://aswinblix.dev/resume",
             lastModified: new Date(),
             changeFrequency: "monthly",
             priority: 0.8,

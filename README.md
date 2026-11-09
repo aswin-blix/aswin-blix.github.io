@@ -2,7 +2,7 @@
 
 Freelance portfolio of **Aswin Blix T.C**, a Shopify and full-stack developer building custom themes, private apps, headless storefronts, business systems, and AWS delivery. Built with Next.js 14 and deployed on GitHub Pages.
 
-**Live:** [aswin-blix.github.io](https://aswin-blix.github.io)
+**Live:** [aswinblix.dev](https://aswinblix.dev)
 
 Design language: **Futuristic Neumorphism** — soft extruded/inset surfaces on a single unified grey, strictly black & white, with light and dark modes.
 

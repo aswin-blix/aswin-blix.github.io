@@ -4,6 +4,6 @@ export default function robots() {
             userAgent: "*",
             allow: "/",
         },
-        sitemap: "https://aswin-blix.github.io/sitemap.xml",
+        sitemap: "https://aswinblix.dev/sitemap.xml",
     };
 }
