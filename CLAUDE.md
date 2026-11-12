@@ -54,7 +54,7 @@ Section headers use the `app/components/helper/section-heading.jsx` component, n
 
 ## Conventions
 
-- **Theming:** `next-themes`, class strategy, default dark. Wrapper at `app/components/theme-provider.jsx`; toggle in `navbar.jsx` reads `resolvedTheme` (with a DOM fallback). `<html>` and `<body>` carry `suppressHydrationWarning`.
+- **Theming:** `next-themes`, class strategy, default light (a visitor's own toggle choice is remembered and wins). Wrapper at `app/components/theme-provider.jsx`; toggle in `navbar.jsx` reads `resolvedTheme` (with a DOM fallback). `<html>` and `<body>` carry `suppressHydrationWarning`.
 - **GSAP:** use the `useGSAP` hook scoped to a container ref. Common patterns: entrance `fromTo({opacity:0,y},…)` with `ScrollTrigger`, 3D "extrude-in" (`rotateX` + `transformPerspective`), and hover/press via `boxShadow` between `var(--nm-raised)`/`var(--nm-inset)`. Plugins (`ScrollTrigger`, `ScrambleText`) are bundled free in gsap 3.13; only `ScrollTrigger` is in use.
 - **Lottie:** import JSON from `/public/lottie/*` and load `AnimationLottie` via `dynamic(..., { ssr: false })`. Keep it greyscale to honour B&W.
 - **Section components** live in `app/components/homepage/<section>/index.jsx`, assembled in `app/page.js` in order: hero → services → projects → about → experience → skills → contact. Education has no component of its own: `experience/index.jsx` renders both data files as one time rail (the `#education` anchor is inside it).
