@@ -23,7 +23,7 @@ There are no tests. Verify changes with `npm run build` (must compile + prerende
 - **Google Tag Manager** in `layout.js` — leave as-is.
 - **`.github/workflows/`** deploy pipeline — leave as-is.
 - **Black & white only.** Never introduce coloured values (no hex hues, no coloured icons/gradients). Use the design tokens.
-- **Readable text is 16px minimum on screen.** Tailwind `text-xs` and `text-sm` intentionally resolve to `1rem`; do not add arbitrary font sizes below 16px. Print-only resume styles may use smaller point sizes.
+- **Readable text is 16px minimum on screen.** Tailwind `text-xs` and `text-sm` intentionally resolve to `1rem`; do not add arbitrary font sizes below 16px. One approved exception: the hero availability tag is 14px. Print-only resume styles may use smaller point sizes.
 - **Shared page shell.** Keep the main content and footer aligned to the same responsive `1440px` maximum width and horizontal gutters.
 - **Canonical domain is `https://aswinblix.dev`.** Every absolute URL (`metadataBase`, canonicals, OG, JSON-LD `@id`/`url`, sitemap, robots) uses it — never `aswin-blix.github.io`, which only 301-redirects. Absolute URLs live in `app/layout.js`, `app/page.js`, `app/resume/layout.jsx`, `app/sitemap.js`, `app/robots.js`.
 
@@ -31,7 +31,7 @@ There are no tests. Verify changes with `npm run build` (must compile + prerende
 
 All visual tokens are CSS variables in **`app/css/globals.scss`** under `:root` (light) and `.dark` (dark):
 
-- Colours: `--nm-bg`, `--nm-text`, `--nm-text-muted`, `--nm-text-faint`, `--nm-shadow-dark`, `--nm-shadow-light`
+- Colours: `--nm-bg`, `--nm-text`, `--nm-text-muted`, `--nm-text-faint`, `--nm-shadow-dark`, `--nm-shadow-light`, `--nm-edge` (hairline border that makes `.nm-btn` / `.nm-icon-btn` read as pressable, mainly in dark mode)
 - Shadow presets composed from the two shadow colours: `--nm-raised`, `--nm-raised-sm`, `--nm-raised-lg`, `--nm-inset`, `--nm-inset-sm`
 - Presets are defined only on `:root`; `.dark` re-tints the base colours and presets re-resolve automatically.
 

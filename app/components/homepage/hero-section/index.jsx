@@ -147,7 +147,8 @@ function HeroSection() {
                 <div className="grid w-full grid-cols-1 items-center gap-10 lg:grid-cols-5 lg:gap-12 xl:gap-16">
                     {/* LEFT — headline with the rotating slot */}
                     <div className="min-w-0 lg:col-span-3">
-                        <span className="hero-rise nm-surface mb-7 inline-flex items-center gap-2 rounded-full px-3.5 py-1 text-base font-medium text-nm-muted shadow-nm-inset-sm">
+                        {/* 14px by request: the one on-screen exception to the 16px minimum. */}
+                        <span className="hero-rise nm-surface mb-7 inline-flex items-center gap-2 rounded-full px-3 py-1 text-[14px] font-medium leading-5 text-nm-muted shadow-nm-inset-sm">
                             <span className="h-2 w-2 rounded-full bg-nm-text" />
                             {personalData.availability}
                         </span>
@@ -201,7 +202,7 @@ function HeroSection() {
                             </a>
                             <Link
                                 href={personalData.resume}
-                                className="inline-flex items-center gap-2 px-3 py-3 text-sm font-semibold text-nm-muted transition-colors hover:text-nm-text"
+                                className="nm-btn px-6 py-3"
                             >
                                 Resume
                                 <FiDownload size={15} />
