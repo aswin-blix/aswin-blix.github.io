@@ -99,10 +99,10 @@ function HeroSection() {
                         className="w-full min-w-0 max-w-3xl [overflow-wrap:anywhere] text-[clamp(38px,5.6vw,68px)] font-black leading-[1] tracking-[-0.045em]"
                     >
                         <span className="hero-rise hero-scramble text-nm-text">
-                            Shopify storefronts,
+                            Shopify stores &amp; apps,
                         </span>{" "}
                         <span className="hero-rise hero-scramble text-nm-muted">
-                            custom apps &amp; business systems.
+                            commerce platforms &amp; business systems.
                         </span>
                     </h1>
 
@@ -160,7 +160,8 @@ function HeroSection() {
                                 {"\n"}  name: <span className="text-nm-text">{"'Aswin Blix'"}</span>,
                                 {"\n"}  role: <span className="text-nm-text">{"'Shopify + Full Stack'"}</span>,
                                 {"\n"}  services: [<span className="text-nm-text">{"'themes'"}</span>,{" "}
-                                <span className="text-nm-text">{"'apps'"}</span>,{" "}
+                                <span className="text-nm-text">{"'apps'"}</span>,
+                                {"\n"}    <span className="text-nm-text">{"'platforms'"}</span>,{" "}
                                 <span className="text-nm-text">{"'cloud'"}</span>],
                                 {"\n"}  delivery: [<span className="text-nm-text">{"'build'"}</span>,{" "}
                                 <span className="text-nm-text">{"'test'"}</span>,{" "}

@@ -21,7 +21,7 @@ export const servicesData = [
             "Theme app extensions, Shopify Functions, product customizers, and invoicing",
             "External databases, Cloudflare Workers, AWS hosting, and operational tooling",
         ],
-        fit: "Manual workflows, store-specific features, integrations, and automation",
+        fit: "Platform migrations to Shopify, store-specific features, integrations, and automation",
     },
     {
         id: "headless-commerce",
@@ -29,9 +29,9 @@ export const servicesData = [
         summary:
             "Custom storefronts and multi-brand platforms when a standard theme cannot support the required customer experience or business model.",
         deliverables: [
-            "Hydrogen, React, and Next.js storefront development",
-            "Storefront API, cart, checkout, customer, payment, and ERP integrations",
-            "Multi-brand architecture, design systems, and product-personalization tools",
+            "Multi-brand Next.js and React storefronts running from one API and database",
+            "B2B quoting, volume and contract pricing, GST invoicing, and Razorpay payments",
+            "Hydrogen and Storefront API builds, design systems, and product-personalization tools",
         ],
         fit: "Complex catalogs, custom buying journeys, and connected commerce platforms",
     },
@@ -43,7 +43,7 @@ export const servicesData = [
         deliverables: [
             "Laravel, Node.js, React, Vue, SQL Server, and REST/GraphQL systems",
             "CRM, ERP, quotation, reporting, authentication, and messaging workflows",
-            "AWS architecture, CI/CD, safe migrations, monitoring, and production recovery",
+            "AWS infrastructure as code (CDK), CI/CD, safe migrations, alarms, and documented rollbacks",
         ],
         fit: "Internal tools, legacy modernization, integrations, and production support",
     },

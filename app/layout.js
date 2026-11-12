@@ -21,7 +21,7 @@ export const metadata = {
         template: "%s | Aswin Blix",
     },
     description:
-        "Freelance Shopify and full-stack developer building custom themes, private apps, headless storefronts, business systems, integrations, and AWS delivery.",
+        "Freelance Shopify and full-stack developer building custom themes, private apps, custom commerce platforms, business systems, integrations, and AWS delivery.",
     keywords: [
         "Aswin Blix",
         "Full Stack Developer",
@@ -53,7 +53,7 @@ export const metadata = {
         siteName: "Aswin Blix Portfolio",
         title: "Aswin Blix — Freelance Shopify & Full-Stack Developer",
         description:
-            "Custom Shopify themes, private apps, headless commerce, business systems, integrations, and AWS delivery for remote clients.",
+            "Custom Shopify themes, private apps, custom commerce platforms, business systems, integrations, and AWS delivery for remote clients.",
         images: [
             {
                 url: "/card.png",
@@ -67,7 +67,7 @@ export const metadata = {
         card: "summary_large_image",
         title: "Aswin Blix — Freelance Shopify & Full-Stack Developer",
         description:
-            "Custom Shopify themes, private apps, headless commerce, business systems, integrations, and AWS delivery for remote clients.",
+            "Custom Shopify themes, private apps, custom commerce platforms, business systems, integrations, and AWS delivery for remote clients.",
         site: "@aswinblix",
         creator: "@aswinblix",
         images: ["/card.png"],

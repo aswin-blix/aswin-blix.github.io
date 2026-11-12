@@ -28,7 +28,7 @@ const jsonLd = [
             nationality: { "@type": "Country", name: "India" },
             telephone: "+91-9488-131-904",
             description:
-                "Freelance developer building Shopify themes, custom apps, headless storefronts, business systems, integrations, and AWS delivery.",
+                "Freelance developer building Shopify themes, custom apps, commerce platforms, business systems, integrations, and AWS delivery.",
             email: "aswinasvin13@gmail.com",
             address: {
                 "@type": "PostalAddress",
