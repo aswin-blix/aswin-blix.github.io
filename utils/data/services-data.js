@@ -47,4 +47,16 @@ export const servicesData = [
         ],
         fit: "Internal tools, legacy modernization, integrations, and production support",
     },
+    {
+        id: "mobile-apps",
+        title: "Android & Flutter App Development",
+        summary:
+            "Offline-first Android apps built with Flutter, taken from the first screen to a tested release build.",
+        deliverables: [
+            "Flutter and Dart apps with Riverpod state management and on-device storage",
+            "Google sign-in, Cloud Firestore sync, and member-only security rules",
+            "Unit and widget tests, strict analysis, and CI-built release APKs",
+        ],
+        fit: "Offline-first tools, apps for field or on-site use, and first-version product builds",
+    },
 ];

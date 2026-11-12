@@ -1,5 +1,5 @@
 import { GoogleTagManager } from "@next/third-parties/google";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Sora } from "next/font/google";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "./components/footer";
@@ -9,6 +9,12 @@ import { ThemeProvider } from "./components/theme-provider";
 import "./css/globals.scss";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+// Display face for headings (geometric, used at semibold via .nm-display).
+const sora = Sora({
+    subsets: ["latin"],
+    variable: "--font-display",
+    display: "swap",
+});
 const jetbrainsMono = JetBrains_Mono({
     subsets: ["latin"],
     variable: "--font-mono",
@@ -21,7 +27,7 @@ export const metadata = {
         template: "%s | Aswin Blix",
     },
     description:
-        "Freelance Shopify and full-stack developer building custom themes, private apps, custom commerce platforms, business systems, integrations, and AWS delivery.",
+        "Freelance Shopify and full-stack developer building custom themes, private apps, custom commerce platforms, Android apps, business systems, integrations, and AWS delivery.",
     keywords: [
         "Aswin Blix",
         "Full Stack Developer",
@@ -38,6 +44,7 @@ export const metadata = {
         "Shopify Developer",
         "Odoo Developer",
         "Flutter Developer",
+        "Android App Developer",
         "AWS",
         "Portfolio",
         "India",
@@ -53,7 +60,7 @@ export const metadata = {
         siteName: "Aswin Blix Portfolio",
         title: "Aswin Blix — Freelance Shopify & Full-Stack Developer",
         description:
-            "Custom Shopify themes, private apps, custom commerce platforms, business systems, integrations, and AWS delivery for remote clients.",
+            "Custom Shopify themes, private apps, custom commerce platforms, Android apps, business systems, integrations, and AWS delivery for remote clients.",
         images: [
             {
                 url: "/card.png",
@@ -67,7 +74,7 @@ export const metadata = {
         card: "summary_large_image",
         title: "Aswin Blix — Freelance Shopify & Full-Stack Developer",
         description:
-            "Custom Shopify themes, private apps, custom commerce platforms, business systems, integrations, and AWS delivery for remote clients.",
+            "Custom Shopify themes, private apps, custom commerce platforms, Android apps, business systems, integrations, and AWS delivery for remote clients.",
         site: "@aswinblix",
         creator: "@aswinblix",
         images: ["/card.png"],
@@ -98,7 +105,7 @@ export default function RootLayout({ children }) {
         <html lang="en" suppressHydrationWarning>
             <body
                 suppressHydrationWarning
-                className={`${inter.variable} ${jetbrainsMono.variable} ${inter.className} nm-surface text-nm-text`}
+                className={`${inter.variable} ${sora.variable} ${jetbrainsMono.variable} ${inter.className} nm-surface text-nm-text`}
             >
                 <ThemeProvider
                     attribute="class"

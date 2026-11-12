@@ -15,7 +15,7 @@ Design language: **Futuristic Neumorphism** — soft extruded/inset surfaces on 
 | Framework | Next.js 14 (App Router, Static Export) |
 | Styling | Tailwind CSS + SASS/SCSS (CSS-variable design tokens) |
 | Theming | next-themes (class-based light/dark) |
-| Animations | GSAP (ScrollTrigger, ScrambleText) + Lottie |
+| Animations | GSAP (ScrollTrigger) + Lottie |
 | Icons | React Icons |
 | Contact Form | EmailJS |
 | Analytics | Google Tag Manager |
@@ -27,7 +27,9 @@ Design language: **Futuristic Neumorphism** — soft extruded/inset surfaces on 
 - Fully responsive, mobile-first layout
 - 16px minimum on-screen text size for readable navigation, labels, cards, forms, and supporting copy
 - Expanded large-screen canvas with consistent main-content and footer alignment
-- GSAP motion: scramble hero text, scroll-progress rail, hero depth parallax, and 3D "extrude-in" card entrances
+- Scroll-driven story (GSAP ScrollTrigger): a pinned hero dial, a sideways services track, a stacking project deck, a word-by-word bio reveal, a time rail with a rolling year, and drifting skill rows
+- Chapter dots and a "Next" pill that always name the next section
+- Phones and reduced-motion users get plain scrolling: no pinning, swipeable services, static cards
 - **Project detail modal** (full description, tech stack, links; Esc / backdrop close, scroll lock)
 - Projects "show more" toggle to keep the grid compact
 - Contact form via EmailJS
@@ -36,13 +38,12 @@ Design language: **Futuristic Neumorphism** — soft extruded/inset surfaces on 
 
 ## Sections
 
-- **Hero** — Buyer-focused positioning, project CTA, animated proof counters, and a monospace capability snippet
-- **Services** — Shopify themes, custom apps, headless commerce, and full-stack/cloud delivery
-- **Selected Work** — Featured Shopify and commerce case studies, then other featured work (e.g. open-source Flutter apps), followed by the wider project archive
-- **About** — Profile card with social links and a decorative Lottie
-- **Experience** — Work history as a card grid
-- **Skills** — Floating neumorphic pill cloud
-- **Education** — Responsive card grid (2×2 → single row)
+- **Hero** — Headline with a pressed-in slot that rotates through what I build, a dial that turns with scroll, project CTA, and proof counters
+- **Services** — Shopify themes, custom apps, headless commerce, full-stack/cloud delivery, and Android/Flutter apps
+- **Selected Work** — Featured projects as a stacking card deck with highlights visible; the rest sit in an archive grid behind "Show all"
+- **About** — Scroll-revealed statement, then the profile card with social links and a decorative Lottie
+- **Experience & Education** — One time rail: work history then education, with a sticky embossed year
+- **Skills** — Three rows of pills that drift in opposite directions on scroll
 - **Contact** — Freelance project brief prompt, EmailJS form, and contact info cards
 
 ## Design System & Theming
@@ -55,7 +56,7 @@ All visual tokens live in **`app/css/globals.scss`** as CSS variables (the singl
 
 `tailwind.config.js` only **maps names → variables** (no hard-coded values), exposing `bg-nm-bg`, `text-nm-{text,muted,faint}`, and `shadow-nm-{raised,raised-sm,raised-lg,inset,inset-sm}`.
 
-Reusable component classes (in `@layer components`) avoid duplicated class strings: `.nm-section`, `.nm-section-title`, `.nm-btn`, `.nm-btn-primary`, `.nm-icon-btn`, `.nm-tag`, `.nm-chip`. To re-skin the whole UI, change a value once in `globals.scss`.
+Reusable component classes (in `@layer components`) avoid duplicated class strings: `.nm-section`, `.nm-section-title`, `.nm-display`, `.nm-btn`, `.nm-btn-primary`, `.nm-icon-btn`, `.nm-tag`, `.nm-chip`. Headings use the Sora display face through `.nm-display`. To re-skin the whole UI, change a value once in `globals.scss`.
 
 ## Getting Started
 
@@ -74,7 +75,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ```
 ├── app/
 │   ├── components/
-│   │   ├── homepage/           # Section components (hero, about, skills, projects, …)
+│   │   ├── homepage/           # Section components (hero, about, skills, projects, …) + scroll-guide.jsx
 │   │   ├── helper/             # Shared helpers (SectionHeading, AnimationLottie)
 │   │   ├── navbar.jsx
 │   │   ├── footer.jsx

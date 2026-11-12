@@ -14,6 +14,7 @@ export const skillsData = [
     "Vite",
     "Flutter",
     "Dart",
+    "Android",
     "Design Systems",
     "PHP",
     "Laravel",
