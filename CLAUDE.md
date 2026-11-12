@@ -4,7 +4,7 @@ Guidance for working in this repo. Read before making changes.
 
 ## What this is
 
-Personal freelance portfolio for **Aswin Blix T.C** — Next.js 14 (App Router), **static export** to GitHub Pages. Single-page site (`app/page.js`) plus a standalone `/resume` page. The buyer-facing positioning prioritizes Shopify theme/app development, headless commerce, full-stack business systems, and cloud delivery. Design language is **Futuristic Neumorphism, strictly black & white** (no hues, ever — light & dark modes only adjust greys).
+Personal freelance portfolio for **Aswin Blix T.C** — Next.js 14 (App Router), **static export** to GitHub Pages, live at **https://aswinblix.dev**. Single-page site (`app/page.js`) plus a standalone `/resume` page. The buyer-facing positioning prioritizes Shopify theme/app development, headless commerce, full-stack business systems, and cloud delivery. Design language is **Futuristic Neumorphism, strictly black & white** (no hues, ever — light & dark modes only adjust greys).
 
 ## Commands
 
@@ -25,6 +25,7 @@ There are no tests. Verify changes with `npm run build` (must compile + prerende
 - **Black & white only.** Never introduce coloured values (no hex hues, no coloured icons/gradients). Use the design tokens.
 - **Readable text is 16px minimum on screen.** Tailwind `text-xs` and `text-sm` intentionally resolve to `1rem`; do not add arbitrary font sizes below 16px. Print-only resume styles may use smaller point sizes.
 - **Shared page shell.** Keep the main content and footer aligned to the same responsive `1440px` maximum width and horizontal gutters.
+- **Canonical domain is `https://aswinblix.dev`.** Every absolute URL (`metadataBase`, canonicals, OG, JSON-LD `@id`/`url`, sitemap, robots) uses it — never `aswin-blix.github.io`, which only 301-redirects. Absolute URLs live in `app/layout.js`, `app/page.js`, `app/resume/layout.jsx`, `app/sitemap.js`, `app/robots.js`.
 
 ## Design system (single source of truth)
 
@@ -57,6 +58,20 @@ Section headers use the `app/components/helper/section-heading.jsx` component, n
 - **Lottie:** import JSON from `/public/lottie/*` and load `AnimationLottie` via `dynamic(..., { ssr: false })`. Keep it greyscale to honour B&W.
 - **Section components** live in `app/components/homepage/<section>/index.jsx`, assembled in `app/page.js` in order: hero → services → projects → about → experience → skills → education → contact.
 - **`/resume`** is self-contained; its print styles are in `app/css/resume-print.scss` (black & white A4). Do not inline a `<style>` block there (causes hydration mismatch).
+- **Adding projects** (entries usually come from the agent prompt in `docs/portfolio-entry-prompt.md`):
+  - Fields: `id, name, description, highlights[3], tools, role, status, featured, code, demo`. Assign the next unused `id` (ids are unique keys, not display order).
+  - **Array order is display order.** The homepage shows the first 6 (`INITIAL_COUNT` in `projects/index.jsx`) before "Show all"; `/resume` lists every `featured: true` entry. Keep Shopify/commerce work at the top to match the positioning.
+  - **Check for duplicates first.** If a project overlaps an existing entry (same repo, platform, or product under a new name), merge into or replace that entry instead of adding a second one.
+  - Match existing tool spellings (`Liquid`, `Next JS`, `Typescript`, …). Rewrite `aswin-blix.github.io/...` demo links to `https://aswinblix.dev/...`.
+  - Card icons come from `ICON_RULES` in `projects/index.jsx` (monochrome `react-icons/si`, regex on name/tools/role). Add a rule if a new stack falls back to the generic icon.
+  - New core technologies go in `utils/data/skills.js` and, when significant, in JSON-LD `knowsAbout` (`app/page.js`) and `keywords` (`app/layout.js`).
+- **New public pages** must be added to `app/sitemap.js` and given a canonical URL in their layout/page metadata. The sitemap is submitted in Google Search Console (Domain property `aswinblix.dev`).
+
+## Hosting & domain
+
+- Deploys on every push to `main` via the GitHub Actions workflow. The custom domain is set in repo **Settings → Pages** (Enforce HTTPS on), so no `public/CNAME` file is needed.
+- DNS is on **Cloudflare**: 4 A + 4 AAAA GitHub Pages IPs on `@`, `www` CNAME → `aswin-blix.github.io`, and a `google-site-verification` TXT on `@` (keep it, or Search Console verification is lost).
+- Keep those records **DNS only (grey cloud)**. `.dev` is HSTS-preloaded (HTTPS mandatory) and GitHub can only issue and renew its certificate when Cloudflare isn't proxying.
 
 ## Gotchas
 

@@ -16,6 +16,7 @@ import {
     SiReact,
     SiPhp,
     SiSass,
+    SiNextdotjs,
 } from "react-icons/si";
 import { TbBuildingWarehouse } from "react-icons/tb";
 import { FiCode, FiArrowUpRight, FiGithub, FiChevronDown } from "react-icons/fi";
@@ -37,6 +38,7 @@ const ICON_RULES = [
     [/\.net|c#|csharp/i, SiDotnet],
     [/python|tkinter/i, SiPython],
     [/scss|sass|design system/i, SiSass],
+    [/next ?js|next\.js/i, SiNextdotjs],
     [/react/i, SiReact],
     [/php/i, SiPhp],
 ];

@@ -38,7 +38,7 @@ Design language: **Futuristic Neumorphism** — soft extruded/inset surfaces on 
 
 - **Hero** — Buyer-focused positioning, project CTA, animated proof counters, and a monospace capability snippet
 - **Services** — Shopify themes, custom apps, headless commerce, and full-stack/cloud delivery
-- **Selected Work** — Featured Shopify and commerce case studies followed by the wider project archive
+- **Selected Work** — Featured Shopify and commerce case studies, then other featured work (e.g. open-source Flutter apps), followed by the wider project archive
 - **About** — Profile card with social links and a decorative Lottie
 - **Experience** — Work history as a card grid
 - **Skills** — Floating neumorphic pill cloud
@@ -94,6 +94,8 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 │       ├── experience.js
 │       ├── educations.js
 │       └── skills.js
+├── docs/
+│   └── portfolio-entry-prompt.md  # Agent prompt that drafts new project entries
 ├── public/                     # Static assets (profile image, OG card, Lottie)
 ├── .github/workflows/          # GitHub Actions deploy pipeline
 └── next.config.js
@@ -103,9 +105,15 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 All content (name, links, experience, projects, skills, education) is centralized in `utils/data/`. Update those files to personalize the portfolio — components render directly from them.
 
+### Adding a project
+
+Run the prompt in [`docs/portfolio-entry-prompt.md`](docs/portfolio-entry-prompt.md) with a coding agent inside the project you want to showcase. It returns an evidence-based entry in the `projects-data.js` format (name, description, three highlights, tools, role, status, links). Paste it into `utils/data/projects-data.js` with the next free `id`; array order is display order, and `featured: true` entries also appear on `/resume`. See "Adding projects" in `CLAUDE.md` for the full checklist.
+
 ## Deployment
 
 Pushes to `main` automatically trigger the GitHub Actions workflow which builds and deploys to GitHub Pages.
+
+The site is served at the custom domain **[aswinblix.dev](https://aswinblix.dev)** (set in repo Settings → Pages, HTTPS enforced). DNS is managed on Cloudflare with DNS-only (unproxied) records pointing at GitHub Pages; `aswin-blix.github.io` redirects to it. The sitemap at `https://aswinblix.dev/sitemap.xml` is registered in Google Search Console.
 
 ```bash
 # Manual build (static export)

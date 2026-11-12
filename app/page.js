@@ -46,13 +46,18 @@ const jsonLd = [
             ],
             knowsAbout: [
                 "JavaScript",
+                "TypeScript",
                 "React",
                 "Next.js",
+                "Node.js",
                 "Laravel",
                 "Vue.js",
                 "Python",
                 "PHP",
                 "AWS",
+                "AWS CDK",
+                "SQL Server",
+                "Flutter",
                 "Shopify",
                 "Shopify Liquid",
                 "Shopify Apps",
@@ -70,7 +75,7 @@ const jsonLd = [
             hasOccupation: {
                 "@type": "Occupation",
                 name: "Freelance Shopify & Full-Stack Developer",
-                skills: "Shopify themes, Shopify apps, Liquid, React, Next.js, Vue.js, Laravel, Node.js, AWS, SQL Server, and headless commerce",
+                skills: "Shopify themes, Shopify apps, Liquid, React, Next.js, Vue.js, Laravel, Node.js, AWS, SQL Server, Flutter, and headless commerce",
             },
             alumniOf: {
                 "@type": "CollegeOrUniversity",

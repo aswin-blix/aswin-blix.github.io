@@ -37,6 +37,7 @@ export const metadata = {
         "Python Developer",
         "Shopify Developer",
         "Odoo Developer",
+        "Flutter Developer",
         "AWS",
         "Portfolio",
         "India",
