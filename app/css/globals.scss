@@ -141,6 +141,59 @@ body {
         @apply rounded-full px-2.5 py-1 text-base font-medium leading-6 text-nm-faint shadow-nm-inset-sm;
     }
 
+    /* Display heading — Sora, semibold. Size it per instance. */
+    .nm-display {
+        font-family: var(--font-display), var(--font-sans), sans-serif;
+        font-weight: 600;
+        letter-spacing: -0.035em;
+        line-height: 1.05;
+        text-wrap: balance;
+    }
+
+    /* Pressed-in headline slot: shows one line of a stacked word list (hero). */
+    .nm-slot {
+        display: block;
+        width: fit-content;
+        max-width: 100%;
+        height: 1.36em;
+        margin: 0.12em 0 0.12em -0.28em;
+        padding-inline: 0.28em;
+        overflow: hidden;
+        border-radius: 0.3em;
+        box-shadow: var(--nm-inset);
+    }
+    .nm-slot li {
+        height: 1.36em;
+        line-height: 1.36em;
+        white-space: nowrap;
+    }
+
+    /* Featured project deck: cards stack under the navbar on tall desktop screens. */
+    .nm-deck-card {
+        transform-origin: 50% 0;
+    }
+    @media (min-width: 1024px) and (min-height: 700px) {
+        .nm-deck-card {
+            position: sticky;
+            top: calc(96px + var(--i, 0) * 14px);
+        }
+    }
+
+    /* Embossed numeral (time rail year): surface-coloured text lifted by shadows. */
+    .nm-emboss {
+        /* Tinted a step off the surface so it stays legible in dark mode. */
+        color: color-mix(in srgb, var(--nm-bg) 84%, var(--nm-text));
+        text-shadow: 3px 3px 6px var(--nm-shadow-dark), -3px -3px 6px var(--nm-shadow-light);
+    }
+
+    /* Hide the scrollbar on swipe rows (services track on small screens). */
+    .nm-no-scrollbar {
+        scrollbar-width: none;
+    }
+    .nm-no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
     /* Raised pill (skills cloud) — presses in on hover */
     .nm-chip {
         background: var(--nm-bg);
@@ -209,10 +262,9 @@ body {
     box-shadow: var(--nm-inset-sm);
 }
 
-/* Blinking caret used in the hero code block */
-.blink {
-    animation: blink 1s step-end infinite;
-}
-@keyframes blink {
-    50% { opacity: 0.4; }
+/* Reduced motion: the hero slot lists every word instead of rotating. */
+@media (prefers-reduced-motion: reduce) {
+    .nm-slot {
+        height: auto;
+    }
 }

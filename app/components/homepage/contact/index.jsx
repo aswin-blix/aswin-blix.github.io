@@ -48,8 +48,8 @@ function ContactSection() {
         <section ref={containerRef} id="contact" className="nm-section">
             <SectionHeading title="Contact" />
 
-            <div className="mb-8 max-w-3xl">
-                <h2 className="text-2xl font-extrabold tracking-tight text-nm-text sm:text-3xl">
+            <div className="mb-10 max-w-4xl">
+                <h2 className="nm-display text-4xl text-nm-text sm:text-5xl lg:text-6xl">
                     Have a store, app, or system that needs a reliable next step?
                 </h2>
                 <p className="mt-3 text-sm leading-7 text-nm-muted">

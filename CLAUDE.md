@@ -4,7 +4,7 @@ Guidance for working in this repo. Read before making changes.
 
 ## What this is
 
-Personal freelance portfolio for **Aswin Blix T.C** — Next.js 14 (App Router), **static export** to GitHub Pages, live at **https://aswinblix.dev**. Single-page site (`app/page.js`) plus a standalone `/resume` page. The buyer-facing positioning prioritizes Shopify theme/app development, headless commerce, full-stack business systems, and cloud delivery. Design language is **Futuristic Neumorphism, strictly black & white** (no hues, ever — light & dark modes only adjust greys).
+Personal freelance portfolio for **Aswin Blix T.C** — Next.js 14 (App Router), **static export** to GitHub Pages, live at **https://aswinblix.dev**. Single-page site (`app/page.js`) plus a standalone `/resume` page. The buyer-facing positioning prioritizes Shopify theme/app development, headless commerce, full-stack business systems, and cloud delivery, with Android/Flutter app development as a fifth service. Design language is **Futuristic Neumorphism, strictly black & white** (no hues, ever — light & dark modes only adjust greys).
 
 ## Commands
 
@@ -43,6 +43,7 @@ Component classes live in `@layer components` in `globals.scss` (so per-instance
 
 - `.nm-section` — section vertical rhythm
 - `.nm-section-title` — uppercase section title (used via `SectionHeading`)
+- `.nm-display` — Sora display heading, semibold (`--font-display`, loaded in `layout.js`); set the size per instance
 - `.nm-btn` / `.nm-btn-primary` — raised pill button / filled inverted button
 - `.nm-icon-btn` — round icon button (compose with `h-9 w-9` etc.)
 - `.nm-tag` — inset mini pill (dates, tags, role badges)
@@ -54,13 +55,23 @@ Section headers use the `app/components/helper/section-heading.jsx` component, n
 ## Conventions
 
 - **Theming:** `next-themes`, class strategy, default dark. Wrapper at `app/components/theme-provider.jsx`; toggle in `navbar.jsx` reads `resolvedTheme` (with a DOM fallback). `<html>` and `<body>` carry `suppressHydrationWarning`.
-- **GSAP:** use the `useGSAP` hook scoped to a container ref. Common patterns: entrance `fromTo({opacity:0,y},…)` with `ScrollTrigger`, 3D "extrude-in" (`rotateX` + `transformPerspective`), and hover/press via `boxShadow` between `var(--nm-raised)`/`var(--nm-inset)`. Plugins (`ScrollTrigger`, `ScrambleText`) are bundled free in gsap 3.13.
+- **GSAP:** use the `useGSAP` hook scoped to a container ref. Common patterns: entrance `fromTo({opacity:0,y},…)` with `ScrollTrigger`, 3D "extrude-in" (`rotateX` + `transformPerspective`), and hover/press via `boxShadow` between `var(--nm-raised)`/`var(--nm-inset)`. Plugins (`ScrollTrigger`, `ScrambleText`) are bundled free in gsap 3.13; only `ScrollTrigger` is in use.
 - **Lottie:** import JSON from `/public/lottie/*` and load `AnimationLottie` via `dynamic(..., { ssr: false })`. Keep it greyscale to honour B&W.
-- **Section components** live in `app/components/homepage/<section>/index.jsx`, assembled in `app/page.js` in order: hero → services → projects → about → experience → skills → education → contact.
+- **Section components** live in `app/components/homepage/<section>/index.jsx`, assembled in `app/page.js` in order: hero → services → projects → about → experience → skills → contact. Education has no component of its own: `experience/index.jsx` renders both data files as one time rail (the `#education` anchor is inside it).
+- **Scroll story.** Each section has one scroll mechanic:
+  - hero: pinned dial + `.nm-slot` word rotation, driven by `personalData.heroRotation`
+  - services: pinned sideways track
+  - projects: sticky deck of `featured` projects (`.nm-deck-card`), archive grid behind "Show all"
+  - about: word-by-word reveal of the first paragraph of `personalData.description`
+  - experience: time rail with a sticky `.nm-emboss` year
+  - skills: drifting rows
+  - `homepage/scroll-guide.jsx`: chapter dots + "Next" pill; its `CHAPTERS` list must match the section ids
+- **Motion gating.** Pinning and sticky effects run only inside `gsap.matchMedia()` queries (`min-width: 1024px`, a `min-height`, and `prefers-reduced-motion: no-preference`). Outside them the content must still be complete: the hero slot rotates on a timer, services become a native swipe row, cards are static. Keep that fallback when adding effects. The deck's sticky rule in `globals.scss` and its matchMedia query in `projects/index.jsx` must use the same condition.
+- **Horizontal overflow.** Anything wider than the page (skill rows) sits in a wrapper with `overflow-x-clip`. Don't rely on `<body>` to clip it; phones can still pan sideways.
 - **`/resume`** is self-contained; its print styles are in `app/css/resume-print.scss` (black & white A4). Do not inline a `<style>` block there (causes hydration mismatch).
 - **Adding projects** (entries usually come from the agent prompt in `docs/portfolio-entry-prompt.md`):
   - Fields: `id, name, description, highlights[3], tools, role, status, featured, code, demo`. Assign the next unused `id` (ids are unique keys, not display order).
-  - **Array order is display order.** The homepage shows the first 6 (`INITIAL_COUNT` in `projects/index.jsx`) before "Show all"; `/resume` lists every `featured: true` entry. Keep Shopify/commerce work at the top to match the positioning.
+  - **Array order is display order.** On the homepage every `featured: true` entry is a card in the scroll deck and the rest sit in the archive grid behind "Show all"; `/resume` lists every `featured: true` entry. Keep Shopify/commerce work at the top to match the positioning.
   - **Check for duplicates first.** If a project overlaps an existing entry (same repo, platform, or product under a new name), merge into or replace that entry instead of adding a second one.
   - Match existing tool spellings (`Liquid`, `Next JS`, `Typescript`, …). Rewrite `aswin-blix.github.io/...` demo links to `https://aswinblix.dev/...`.
   - Card icons come from `ICON_RULES` in `projects/index.jsx` (monochrome `react-icons/si`, regex on name/tools/role). Add a rule if a new stack falls back to the generic icon.

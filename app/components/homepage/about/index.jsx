@@ -23,6 +23,13 @@ const SOCIALS = [
     { href: personalData.facebook, icon: BsFacebook, label: "Facebook" },
 ];
 
+// First paragraph becomes the scroll-revealed statement; the rest stays in the card.
+const [STATEMENT, ...PARAGRAPHS] = personalData.description
+    .split(/\n\s*/)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean);
+const STATEMENT_WORDS = STATEMENT.split(/\s+/);
+
 function AboutSection() {
     const containerRef = useRef(null);
 
@@ -37,9 +44,29 @@ function AboutSection() {
                     duration: 0.7,
                     stagger: 0.12,
                     ease: "power3.out",
-                    scrollTrigger: { trigger: containerRef.current, start: "top 80%" },
+                    scrollTrigger: { trigger: ".about-card", start: "top 85%" },
                 }
             );
+
+            // Word reveal: the statement turns solid word by word as it scrolls past.
+            const mm = gsap.matchMedia();
+            mm.add("(prefers-reduced-motion: no-preference)", () => {
+                gsap.fromTo(
+                    ".about-word",
+                    { opacity: 0.22 },
+                    {
+                        opacity: 1,
+                        stagger: 0.1,
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: ".about-statement",
+                            start: "top 80%",
+                            end: "bottom 45%",
+                            scrub: true,
+                        },
+                    }
+                );
+            });
         },
         { scope: containerRef }
     );
@@ -48,7 +75,15 @@ function AboutSection() {
         <section ref={containerRef} id="about" className="nm-section">
             <SectionHeading title="Who I Am" />
 
-            <div className="nm-surface relative overflow-hidden rounded-[28px] p-6 shadow-nm-raised-lg sm:p-8 lg:p-10">
+            <p className="about-statement nm-display mb-12 max-w-5xl text-[clamp(26px,3.4vw,48px)] leading-[1.25] text-nm-text">
+                {STATEMENT_WORDS.map((word, index) => (
+                    <span key={index} className="about-word">
+                        {word}{" "}
+                    </span>
+                ))}
+            </p>
+
+            <div className="about-card nm-surface relative overflow-hidden rounded-[28px] p-6 shadow-nm-raised-lg sm:p-8 lg:p-10">
                 {/* Decorative grayscale lottie, top-right */}
                 <div
                     aria-hidden="true"
@@ -87,12 +122,17 @@ function AboutSection() {
 
                     {/* RIGHT — copy */}
                     <div className="about-rise relative z-10">
-                        <h3 className="mb-4 text-2xl font-extrabold tracking-tight text-nm-text sm:text-[28px]">
+                        <h3 className="nm-display mb-4 text-2xl text-nm-text sm:text-3xl">
                             Hey! I&apos;m Aswin Blix
                         </h3>
-                        <p className="max-w-2xl text-base leading-[1.8] text-nm-muted">
-                            {personalData.description}
-                        </p>
+                        {PARAGRAPHS.map((paragraph) => (
+                            <p
+                                key={paragraph}
+                                className="max-w-2xl text-base leading-[1.8] text-nm-muted"
+                            >
+                                {paragraph}
+                            </p>
+                        ))}
                     </div>
                 </div>
             </div>

@@ -1,9 +1,9 @@
 import AboutSection from "./components/homepage/about";
 import ContactSection from "./components/homepage/contact";
-import Education from "./components/homepage/education";
 import Experience from "./components/homepage/experience";
 import HeroSection from "./components/homepage/hero-section";
 import Projects from "./components/homepage/projects";
+import ScrollGuide from "./components/homepage/scroll-guide";
 import Services from "./components/homepage/services";
 import Skills from "./components/homepage/skills";
 
@@ -28,7 +28,7 @@ const jsonLd = [
             nationality: { "@type": "Country", name: "India" },
             telephone: "+91-9488-131-904",
             description:
-                "Freelance developer building Shopify themes, custom apps, commerce platforms, business systems, integrations, and AWS delivery.",
+                "Freelance developer building Shopify themes, custom apps, commerce platforms, Android apps, business systems, integrations, and AWS delivery.",
             email: "aswinasvin13@gmail.com",
             address: {
                 "@type": "PostalAddress",
@@ -58,6 +58,7 @@ const jsonLd = [
                 "AWS CDK",
                 "SQL Server",
                 "Flutter",
+                "Android app development",
                 "Shopify",
                 "Shopify Liquid",
                 "Shopify Apps",
@@ -75,7 +76,7 @@ const jsonLd = [
             hasOccupation: {
                 "@type": "Occupation",
                 name: "Freelance Shopify & Full-Stack Developer",
-                skills: "Shopify themes, Shopify apps, Liquid, React, Next.js, Vue.js, Laravel, Node.js, AWS, SQL Server, Flutter, and headless commerce",
+                skills: "Shopify themes, Shopify apps, Liquid, React, Next.js, Vue.js, Laravel, Node.js, AWS, SQL Server, Flutter, Android apps, and headless commerce",
             },
             alumniOf: {
                 "@type": "CollegeOrUniversity",
@@ -105,13 +106,13 @@ export default function Home() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            <ScrollGuide />
             <HeroSection />
             <Services />
             <Projects />
             <AboutSection />
             <Experience />
             <Skills />
-            <Education />
             <ContactSection />
         </>
     );
